@@ -48,7 +48,7 @@ describe("1 - Crie o formulário que será usado para adicionar cartas ao baralh
     expect(rareInput.options[1].value).toBe("raro");
     expect(rareInput.options[2].value).toBe("muito raro");
   });
-  
+
   it("Será validado se existe um input checkbox que possui o `data-testid='trunfo-input'`", () => {
     render(<App />);
     const trunfoCheck = screen.getByTestId(/trunfo-input/i);

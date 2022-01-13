@@ -6,14 +6,14 @@ import App from '../App';
 describe("5 - Faça a validação do botão de Salvar no formulário", () => {
   it("Será validado se o botão `salvar` está desabilitado quando a página é renderizada pela primeira vez", () => {
     render(<App />);
-    
+
     const saveBtn = screen.getByTestId("save-button");
     expect(saveBtn).toBeDisabled();
   });
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo nome estiver vazio", () => {
     render(<App />);
-    
+
     const saveBtn = screen.getByTestId("save-button");
     userEvent.type(screen.getByTestId(/name-input/i), 'Lorem ipsum');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
@@ -23,14 +23,14 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     userEvent.type(screen.getByTestId(/attr3-input/i), '56');
     userEvent.selectOptions(screen.getByTestId(/rare-input/i), 'raro');
     expect(saveBtn).not.toBeDisabled();
-    
+
     userEvent.type(screen.getByTestId(/name-input/i), '{selectall}{backspace}');
     expect(saveBtn).toBeDisabled();
   });
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo imagem estiver vazio", () => {
     render(<App />);
-    
+
     const saveBtn = screen.getByTestId("save-button");
     userEvent.type(screen.getByTestId(/name-input/i), 'Lorem ipsum');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
@@ -47,7 +47,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo descrição estiver vazio", () => {
     render(<App />);
-    
+
     const saveBtn = screen.getByTestId("save-button");
     userEvent.type(screen.getByTestId(/name-input/i), 'Lorem ipsum');
     userEvent.type(screen.getByTestId(/image-input/i), 'url-to-image');
@@ -64,7 +64,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 1 for maior que 90", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -90,7 +90,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 1 menor que 0", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -115,7 +115,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 2 for maior que 90", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -140,7 +140,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 2 menor que 0", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -165,7 +165,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 3 for maior que 90", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -190,7 +190,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se o campo do atributo 3 menor que 0", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -215,7 +215,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão  `salvar` está desabilitado se a somatória dos campos de atributos for maior que 210.", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -240,7 +240,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
 
   it("Será validado se o botão `salvar` é habilitado ao preencher todos os campos do formulário corretamente.", () => {
     render(<App />);
-    
+
     const nameInput = screen.getByTestId(/name-input/i);
     const descInput = screen.getByTestId(/description-input/i);
     const imageInput = screen.getByTestId(/image-input/i);
@@ -249,7 +249,7 @@ describe("5 - Faça a validação do botão de Salvar no formulário", () => {
     const attr3Input = screen.getByTestId(/attr3-input/i);
     const selectInput = screen.getByTestId(/rare-input/i);
     const saveBtn = screen.getByTestId("save-button");
-    
+
     expect(saveBtn).toBeDisabled();
 
     userEvent.type(nameInput, 'Carta 1 - Trybe');

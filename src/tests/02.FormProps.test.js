@@ -25,7 +25,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/name-input/i);
 
     expect(input).toHaveValue("Nome da carta");
-    
+
     userEvent.type(input, "Novo nome");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -36,7 +36,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/description-input/i);
 
     expect(input).toHaveValue("Descrição da carta");
-    
+
     userEvent.type(input, "Nova descrição");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -47,7 +47,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/attr1-input/i);
 
     expect(input).toHaveValue(12);
-    
+
     userEvent.type(input, "21");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -58,7 +58,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/attr2-input/i);
 
     expect(input).toHaveValue(34);
-    
+
     userEvent.type(input, "43");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -69,7 +69,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/attr3-input/i);
 
     expect(input).toHaveValue(56);
-    
+
     userEvent.type(input, "65");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -80,7 +80,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/image-input/i);
 
     expect(input).toHaveValue("url-to-image");
-    
+
     userEvent.type(input, "new-ur-to-image");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -91,7 +91,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/rare-input/i);
 
     expect(input).toHaveValue("raro");
-    
+
     userEvent.selectOptions(input, "muito raro");
     expect(onInputChange).toHaveBeenCalled();
   });
@@ -102,7 +102,7 @@ describe("2 - Adicione as props necessárias ao componente de formulário", () =
     const input = screen.getByTestId(/trunfo-input/i);
 
     expect(input).toBeChecked();
-    
+
     userEvent.click(input);
     expect(onInputChange).toHaveBeenCalled();
   });

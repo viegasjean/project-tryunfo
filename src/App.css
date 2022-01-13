@@ -1,0 +1,19 @@
+h1 {
+  color: red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+label, input, textarea, select, button {
+  font-size: large;
+  margin: 10px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+}
